@@ -1,59 +1,64 @@
-﻿@model UserProfile
+@model UserProfile
 
-@{
-    ViewData["Title"] = "J. Doe profile page";
-}
-
-<h1>Profile Page</h1>
-
-<div>
-    <h4>UserProfile</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserProfileId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.UserProfileId
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.FullName
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.Email
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.PhoneNumber
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.ImageUrl
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GitHubUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.GitHubUrl
-        </dd>
-        <dt>Skilled Languages</dt>
-        <dd>
-            <ul>
-                @foreach(string languageSkill in Model.SkilledLanguages)
-                {
-                    <li>@languageSkill</li>
-                }
-            </ul>
-        </dd>
-    </dl>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 800px;
+        }
+        img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Profile Picture for Mobile and Desktop -->
+            <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+                <img src="@Model.ImageUrl" class="img-fluid rounded-circle" alt="Profile Picture">
+            </div>
+            <!-- User Information for Mobile and Desktop -->
+            <div class="col-12 col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">@Model.FullName</h2>
+                        <p class="card-text">Email: @Model.Email</p>
+                        <p class="card-text">Phone: @Model.PhoneNumber</p>
+                        <p class="card-text">Address: 123 Main St, Anytown, USA</p>
+                        <h4>User Profile</h4>
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UserProfileId)</dt>
+                            <dd class="col-sm-10">@Model.UserProfileId</dd>
+                            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.GitHubUrl)</dt>
+                            <dd class="col-sm-10">@Model.GitHubUrl</dd>
+                            <dt>Skilled Languages</dt>
+                            <dd>
+                                <ul>
+                                    @foreach(string languageSkill in Model.SkilledLanguages)
+                                    {
+                                        <li>@languageSkill</li>
+                                    }
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
