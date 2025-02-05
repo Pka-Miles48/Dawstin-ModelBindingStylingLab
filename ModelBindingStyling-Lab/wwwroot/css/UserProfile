@@ -1,0 +1,53 @@
+.container {
+            max-width: 800px;
+        }
+        img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .card {
+            margin-bottom: 15px;
+        }
+        .table-responsive {
+            margin-top: 15px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 767px) {
+            /* Mobile Layout Adjustments */
+            .container {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+            img {
+                max-width: 100px;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            /* Desktop Layout Adjustments */
+            .container {
+                max-width: 800px;
+            }
+            img {
+                max-width: 150px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
