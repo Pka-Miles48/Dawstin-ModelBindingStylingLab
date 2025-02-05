@@ -1,0 +1,34 @@
+.card {
+            margin-bottom: 15px;
+        }
+        .table-responsive {
+            margin-top: 15px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 767px) {
+            /* Mobile Layout Adjustments */
+            .container {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+            .card h5 {
+                font-size: 1.2rem;
+            }
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            /* Desktop Layout Adjustments */
+            .container {
+                max-width: 800px;
+            }
+            .card h5 {
+                font-size: 1.5rem;
+            }
+            .card p {
+                font-size: 1rem;
+            }
+        }
